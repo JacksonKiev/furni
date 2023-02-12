@@ -1,0 +1,249 @@
+//====================================================================================================
+
+//====================================================================================================
+
+
+.footer {
+
+    // .footer__container
+
+    &__container {
+        color: $secondColor;
+    }
+
+    // .footer__top
+
+    &__top {
+        border-bottom: 1px solid #EFF2F1;
+        font-size: rem(14);
+        line-height: math.div(24, 14);
+        display: flex;
+        flex-direction: column;
+        padding-bottom: rem(32);
+
+
+    }
+
+    // .footer__logo
+
+    &__logo {
+        margin-bottom: rem(17);
+
+        svg {
+            width: rem(95);
+            height: rem(39);
+            fill: black;
+            fill-opacity: 1;
+
+            path {
+                fill: black;
+            }
+
+        }
+    }
+
+    // .footer__body
+
+    &__body {
+        margin-bottom: rem(43);
+        display: flex;
+        gap: rem(65);
+
+        @media (max-width:$mobile) {
+            flex-direction: column;
+            gap: rem(30);
+        }
+
+    }
+
+    // .footer__text
+
+    &__text {
+        @media (min-width:$mobile) {
+            flex: 0 1 rem(360);
+        }
+
+    }
+
+    // .footer__menu
+
+    &__menu {}
+
+    // .footer__soc
+
+    &__soc {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: rem(11);
+
+        &>div {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: rem(41);
+            height: rem(41);
+            border-radius: 50%;
+            background: #D9D9D9;
+            transition: background-color .5s ease 0s;
+
+            svg {
+                transition: fill .5s ease 0s;
+            }
+
+            &:hover {
+                background-color: $greenColor;
+
+                svg {
+
+                    fill: white;
+                }
+            }
+
+
+            &>a {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+    }
+
+    // .footer__fb
+
+    &__fb {}
+
+    // .footer__svg
+
+    &__svg {}
+
+    // .footer__soc-link
+
+    &__soc-link {}
+
+    // .footer__insta
+
+    &__insta {}
+
+    // .footer__twi
+
+    &__twi {}
+
+    // .footer__ln
+
+    &__ln {}
+
+    // .footer__bottom
+
+    &__bottom {}
+}
+
+.footer-menu {
+
+    // .footer-menu__list
+
+    &__list {
+        display: flex;
+
+        @media (max-width:$mobileSmall) {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+
+    // .footer-menu__submenu
+
+    &__submenu {}
+}
+
+.submenu {
+    &:nth-child(1) {
+        @include adaptiveValue("margin-right", 85, 20);
+    }
+
+    &:nth-child(2) {
+        @include adaptiveValue("margin-right", 56, 14);
+    }
+
+    &:nth-child(3) {
+        @include adaptiveValue("margin-right", 38, 10);
+    }
+
+
+
+    // .submenu__list
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5);
+
+    }
+
+    // .submenu__item
+
+    &__item {
+        &:hover {
+            color: #262525;
+            font-weight: 500;
+        }
+    }
+
+    // .submenu__link
+
+    &__link {
+        transition: all .3s ease 0s;
+        white-space: nowrap;
+
+
+
+    }
+}
+
+.bottom {
+    font-size: rem(13);
+    line-height: math.div(24, 13);
+    padding-top: rem(36);
+    @include adaptiveValue(" padding-bottom", 93, 20, 1, 1140, 300);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: em(700)) {
+        flex-direction: column;
+        gap: rem(10);
+    }
+
+    @media (max-width: em(400)) {
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    // .bottom__left
+
+    &__left {}
+
+    // .bottom__right
+
+    &__right {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 42, 20);
+    }
+
+    // .bottom__terms
+
+    &__terms {}
+
+    // .bottom__policy
+
+    &__policy {}
+}

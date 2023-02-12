@@ -1,0 +1,23 @@
+[
+        {
+            "src": "img/section7/1.jpg",
+            "title": "Пастелью",
+            "info": "#pastel"
+        },
+        {
+            "src": "img/section7/2.jpg",
+            "title": "Поп-арт",
+            "info": "#popart"
+        },
+        {
+            "src": "img/section7/3.jpg",
+            "title": "Фотомозаика",
+            "info": "#mozaika"
+        },
+        {
+            "src": "img/section7/2.jpg",
+            "title": "Поп-арт",
+            "info": "#popart"
+        }
+
+    ]

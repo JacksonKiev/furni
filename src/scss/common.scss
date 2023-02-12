@@ -1,0 +1,158 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.page {
+    background-color: #EFF2F1;
+
+    &__section-1 {}
+
+    &__section-2 {}
+
+    &__section-3 {}
+
+    &__section-4 {}
+
+    // .page__section-5
+
+    &__section-5 {}
+
+    &__section-6 {}
+
+    &__section-7 {}
+
+    &__section-8 {
+        background-color: #fff;
+    }
+}
+
+.title {
+    font-weight: 600;
+    @include adaptiveValue("font-size", 34, 24);
+    line-height: math.div(41.15, 34);
+    color: #2f2f2f;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes flickering {
+    from {
+        scale: 0.9;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+.item-section-2__buttons,
+.item-section-6__buttons {
+
+    @media (max-width:$mobile) {
+        gap: rem(40);
+    }
+
+    @media (max-width:$mobileSmall) {
+        transform: scale(0.7);
+    }
+}
+
+.item-section-2__button,
+.item-section-6__button {
+    cursor: pointer;
+
+    &:hover {
+
+        background-color: #07241a;
+
+        & use {
+
+            fill: #07241a;
+        }
+    }
+
+    width: rem(58);
+    height: rem(58);
+    border-radius: 50%;
+    background-color: #385D50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease 0s;
+
+
+
+    &.swiper-button-disabled {
+        background-color: #C4C4C4;
+
+    }
+}
+
+.item-section-2__svg,
+.item-section-6__svg {
+    transition: all 0.5s ease 0s;
+    width: rem(18);
+    height: rem(18);
+
+    use {
+
+
+        transition: all 0.5s ease 0s;
+        width: rem(14);
+        height: rem(14);
+        stroke: white;
+        fill: #385D50;
+
+        .swiper-button-disabled & {
+            stroke: black;
+            fill: #C4C4C4;
+
+        }
+    }
+
+
+}
+
+.item-section-2__next,
+.item-section-6__next {
+    transform: rotate(-180deg);
+}
+
+//========================================================================================================================================================
+
+.topToButton {
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: rem(30);
+    right: rem(50);
+    width: rem(50);
+    height: rem(50);
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    z-index: 6;
+    opacity: 0.7;
+    cursor: pointer;
+    display: none;
+    animation: flickering 1.5s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+
+    svg {
+        width: rem(30);
+        height: rem(30);
+        fill: $greenColor;
+    }
+}
+
+
+.top_svg {}
