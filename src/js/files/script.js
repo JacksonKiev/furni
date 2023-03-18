@@ -6,11 +6,11 @@ import {
 import {
     flsModules
 } from "./modules.js";
-
-import showMoreStyles from "./showMoreStyles.js"
 import {
     formSubmit
 } from "./forms/forms.js";
+
+import showMoreStyles from "./showMoreStyles.js"
 import formsSubmit from "./formsSubmit.js";
 import animation from "./animation.js";
 
@@ -54,7 +54,7 @@ function formValidationAndSubmit(check) {
 
             // e.target.submit();
 
-            formsSubmit();
+            formsSubmit(form);
             form.reset();
             itemsValidate.forEach(itemValidate => {
                 itemValidate.classList.remove('_form-error');
@@ -92,6 +92,4 @@ function scrollToTop(elem, button) {
 formValidationAndSubmit('.section-8__form');
 showMoreStyles('.section-7__link', '.section-7__cards');
 animation();
-const atr = document.querySelector('.buttons-section-1__button');
-
 scrollToTop('.section-1', '.topToButton');

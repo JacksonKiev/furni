@@ -22,8 +22,11 @@
         padding-top: 30vh;
         ;
 
-        // @include adaptiveValue("padding-bottom", 157, 50);
-        // @include adaptiveValue("padding-top", 160, 100);
+        @media (max-width:$mobile) {
+            @include adaptiveValue("padding-bottom", 157, 50);
+            @include adaptiveValue("padding-top", 160, 100);
+        }
+
 
     }
 
@@ -1073,7 +1076,7 @@
         gap: rem(24);
     }
 
-    img {
+    &__img {
         position: absolute;
         right: 0;
         top: -72px;

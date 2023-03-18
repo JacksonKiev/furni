@@ -1,8 +1,17 @@
-const formsSubmit = () => {
-    const forms = document.querySelectorAll('form');
-    const inputs = document.querySelectorAll('input');
+const formsSubmit = (form) => {
+    const inputs = form.querySelectorAll('input');
+    const messageBlock = document.createElement('div');
+    const statusImg = document.createElement('img');
+    statusImg.setAttribute('src', "../img/spinner.gif");
+
+
     const postData = async (url, data) => {
+
         console.log('...Загрузка');
+        messageBlock.appendChild(statusImg);
+
+
+
         let res = await fetch(url, {
             method: "POST",
             body: data
@@ -20,28 +29,37 @@ const formsSubmit = () => {
     }
     let keys = 0;
 
-    forms.forEach(form => {
+    messageBlock.appendChild(statusImg);
+    form.appendChild(messageBlock);
 
-        const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
-        const formData = new FormData(form);
-        console.log(formData);
+    const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
+    const formData = new FormData(form);
+    console.log(messageBlock);
+    postData(formAction, formData)
+        .then(res => {
+            statusImg.remove();
+            messageBlock.textContent = 'Ваше сообщение отправлено, мы с Вами свяжемся...';
+            messageBlock.style.fontWeight = 'Bold';
+            setTimeout(() => {
+                messageBlock.remove();
+            }, 2000)
+        })
+        .catch(() => {
+            statusImg.remove();
+            messageBlock.textContent = 'Что-то пошло не так....';
+            setTimeout(() => {
+                messageBlock.remove();
+            }, 2000)
+            console.log("Что-то пошло не так");
 
-        postData(formAction, formData)
-            .then(res => {
-                console.log(res);
+        })
+        .finally(() => {
+            clearInputs();
 
-            })
-            .catch(() => {
-                console.log("Что-то пошло не так");
-
-            })
-            .finally(() => {
-                clearInputs();
-
-            })
+        })
 
 
-    })
+
 
 };
 
